@@ -42,7 +42,7 @@
         label:hover {
             background-color: #ecf0f1;
         }
-        input[type="radio"], input[type="checkbox"] {
+        input[type="radio"] {
             margin-right: 10px;
         }
         button {
@@ -78,7 +78,7 @@
         }
         .question-number {
             font-weight: bold;
-            color: #3498db;
+            color: black; /* Изменен цвет текста вопросов на черный */
             margin-bottom: 10px;
         }
         .section-title {
@@ -92,10 +92,8 @@
 </head>
 <body>
     <h1>Тест по теме "Аксиология"</h1>
-    
     <div id="quiz-container">
         <div class="section-title">Основные вопросы (1-15)</div>
-        
         <div class="question" id="q1">
             <div class="question-number">1. Что изучает аксиология?</div>
             <label><input type="radio" name="q1" value="a"> Природу сознания</label>
@@ -103,7 +101,6 @@
             <label><input type="radio" name="q1" value="c"> Философскую теорию ценностей</label>
             <label><input type="radio" name="q1" value="d"> Структуру языка</label>
         </div>
-        
         <div class="question" id="q2">
             <div class="question-number">2. Какие два основных типа аксиологических теорий существуют?</div>
             <label><input type="radio" name="q2" value="a"> Натурализм и трансцендентализм</label>
@@ -111,7 +108,6 @@
             <label><input type="radio" name="q2" value="c"> Релятивизм и догматизм</label>
             <label><input type="radio" name="q2" value="d"> Эмпиризм и рационализм</label>
         </div>
-        
         <div class="question" id="q3">
             <div class="question-number">3. Личностные ценности формируются преимущественно под влиянием:</div>
             <label><input type="radio" name="q3" value="a"> Генетической предрасположенности</label>
@@ -119,7 +115,6 @@
             <label><input type="radio" name="q3" value="c"> Экономического статуса</label>
             <label><input type="radio" name="q3" value="d"> Климатических условий</label>
         </div>
-
         <div class="question" id="q4">
             <div class="question-number">4. Чем ценности отличаются от знаний?</div>
             <label><input type="radio" name="q4" value="a"> Ценности субъективны, знания объективны</label>
@@ -127,7 +122,6 @@
             <label><input type="radio" name="q4" value="c"> Знания вечны, ценности изменчивы</label>
             <label><input type="radio" name="q4" value="d"> Все варианты верны</label>
         </div>
-
         <div class="question" id="q5">
             <div class="question-number">5. Что отражает противоречие между «должным» и «сущим»?</div>
             <label><input type="radio" name="q5" value="a"> Конфликт между идеалом и реальностью</label>
@@ -135,7 +129,6 @@
             <label><input type="radio" name="q5" value="c"> Динамику социальных изменений</label>
             <label><input type="radio" name="q5" value="d"> Противопоставление эмоций и разума</label>
         </div>
-
         <div class="question" id="q6">
             <div class="question-number">6. Какая философская система акцентирует ценности свободы и индивидуального выбора?</div>
             <label><input type="radio" name="q6" value="a"> Гедонизм</label>
@@ -143,15 +136,13 @@
             <label><input type="radio" name="q6" value="c"> Утилитаризм</label>
             <label><input type="radio" name="q6" value="d"> Марксизм</label>
         </div>
-
         <div class="question" id="q7">
             <div class="question-number">7. Как ценности влияют на структуру познания? (выберите 2 варианта)</div>
-            <label><input type="radio" name="q7" value="a"> Определяют направление научных исследований</label>
-            <label><input type="radio" name="q7" value="b"> Заменяют логические аргументы</label>
-            <label><input type="radio" name="q7" value="c"> Обесценивают эмпирические данные</label>
-            <label><input type="radio" name="q7" value="d"> Упрощают интерпретацию фактов</label>
+            <label><input type="checkbox" name="q7" value="a"> Определяют направление научных исследований</label>
+            <label><input type="checkbox" name="q7" value="b"> Заменяют логические аргументы</label>
+            <label><input type="checkbox" name="q7" value="c"> Обесценивают эмпирические данные</label>
+            <label><input type="checkbox" name="q7" value="d"> Упрощают интерпретацию фактов</label>
         </div>
-
         <div class="question" id="q8">
             <div class="question-number">8. Какая сфера общества связана с ценностью «справедливость»?</div>
             <label><input type="radio" name="q8" value="a"> Экономика</label>
@@ -159,15 +150,13 @@
             <label><input type="radio" name="q8" value="c"> Религия</label>
             <label><input type="radio" name="q8" value="d"> Искусство</label>
         </div>
-
-            <div class="question" id="q9">
+        <div class="question" id="q9">
             <div class="question-number">9. Что из перечисленного относится к базовым потребностям в пирамиде Маслоу?</div>
             <label><input type="radio" name="q9" value="a"> Самореализация</label>
             <label><input type="radio" name="q9" value="b"> Физиологические потребности</label>
             <label><input type="radio" name="q9" value="c"> Уважение окружающих</label>
             <label><input type="radio" name="q9" value="d"> Эстетические потребности</label>
         </div>
-
         <div class="question" id="q10">
             <div class="question-number">10. Иерархия ценностей личности всегда:</div>
             <label><input type="radio" name="q10" value="a"> Статична</label>
@@ -175,7 +164,6 @@
             <label><input type="radio" name="q10" value="c"> Определяется государством</label>
             <label><input type="radio" name="q10" value="d"> Игнорирует эмоции</label>
         </div>
-
         <div class="question" id="q11">
             <div class="question-number">11. Ценность «истина» наиболее значима в сфере:</div>
             <label><input type="radio" name="q11" value="a"> Экономики</label>
@@ -183,7 +171,6 @@
             <label><input type="radio" name="q11" value="c"> Политики</label>
             <label><input type="radio" name="q11" value="d"> Семейных отношений</label>
         </div>
-
         <div class="question" id="q12">
             <div class="question-number">12. Что из перечисленного НЕ является функцией ценностей?</div>
             <label><input type="radio" name="q12" value="a"> Мотивация деятельности</label>
@@ -191,7 +178,6 @@
             <label><input type="radio" name="q12" value="c"> Замена научных методов</label>
             <label><input type="radio" name="q12" value="d"> Формирование целей</label>
         </div>
-
         <div class="question" id="q13">
             <div class="question-number">13. Утилитаризм как теория ценностей основан на принципе:</div>
             <label><input type="radio" name="q13" value="a"> «Наибольшее счастье для наибольшего числа людей»</label>
@@ -199,7 +185,6 @@
             <label><input type="radio" name="q13" value="c"> «Познай самого себя»</label>
             <label><input type="radio" name="q13" value="d"> «Существование предшествует сущности»</label>
         </div>
-
         <div class="question" id="q14">
             <div class="question-number">14. Какие ценности преобладают в традиционном обществе?</div>
             <label><input type="radio" name="q14" value="a"> Инновации и свобода</label>
@@ -207,7 +192,6 @@
             <label><input type="radio" name="q14" value="c"> Конкуренция и индивидуализм</label>
             <label><input type="radio" name="q14" value="d"> Риск и эксперимент</label>
         </div>
-
         <div class="question" id="q15">
             <div class="question-number">15. Как связаны ценности и цели?</div>
             <label><input type="radio" name="q15" value="a"> Ценности определяют выбор целей</label>
@@ -215,9 +199,7 @@
             <label><input type="radio" name="q15" value="c"> Это взаимно независимые категории</label>
             <label><input type="radio" name="q15" value="d"> Цели упраздняют ценности</label>
         </div>
-        
         <div class="section-title">Дополнительные вопросы (16-17)</div>
-        
         <div class="question" id="q16">
             <div class="question-number">16. Какой философ связан с концепцией «воли к власти» как высшей ценности?</div>
             <label><input type="radio" name="q16" value="a"> Иммануил Кант</label>
@@ -225,7 +207,6 @@
             <label><input type="radio" name="q16" value="c"> Карл Маркс</label>
             <label><input type="radio" name="q16" value="d"> Джон Локк</label>
         </div>
-        
         <div class="question" id="q17">
             <div class="question-number">17. В какой культуре «гармония с природой» считается ключевой ценностью?</div>
             <label><input type="radio" name="q17" value="a"> Древнегреческая</label>
@@ -234,10 +215,8 @@
             <label><input type="radio" name="q17" value="d"> Постмодернистская</label>
         </div>
     </div>
-    
     <button onclick="checkAnswers()">Проверить ответы</button>
     <div id="result"></div>
-    
     <script>
         const correctAnswers = {
             q1: "c",
@@ -258,22 +237,18 @@
             q16: "b",
             q17: "b"
         };
-
         function checkAnswers() {
             let score = 0;
             const totalQuestions = Object.keys(correctAnswers).length;
-            
             for (const questionId in correctAnswers) {
                 const correctAnswer = correctAnswers[questionId];
                 const questionElement = document.getElementById(questionId);
-                
                 if (Array.isArray(correctAnswer)) {
                     // Обработка вопросов с множественным выбором
                     const selected = [];
                     document.querySelectorAll(`#${questionId} input[type="checkbox"]:checked`).forEach(el => {
                         selected.push(el.value);
                     });
-                    
                     if (JSON.stringify(selected.sort()) === JSON.stringify(correctAnswer.sort())) {
                         score++;
                         questionElement.style.borderLeft = "5px solid #27ae60";
@@ -283,7 +258,6 @@
                 } else {
                     // Обработка вопросов с одиночным выбором
                     const selected = document.querySelector(`#${questionId} input[name="${questionId}"]:checked`);
-                    
                     if (selected && selected.value === correctAnswer) {
                         score++;
                         questionElement.style.borderLeft = "5px solid #27ae60";
@@ -292,21 +266,17 @@
                     }
                 }
             }
-            
             const resultElement = document.getElementById("result");
             resultElement.style.display = "block";
             resultElement.innerHTML = `
                 <div>Ваш результат: <span class="${score >= totalQuestions/2 ? 'correct' : 'incorrect'}">${score} из ${totalQuestions}</span></div>
                 <div>${getResultMessage(score, totalQuestions)}</div>
             `;
-            
             // Прокрутка к результатам
             resultElement.scrollIntoView({ behavior: 'smooth' });
         }
-        
         function getResultMessage(score, total) {
             const percentage = (score / total) * 100;
-            
             if (percentage >= 90) {
                 return "Отлично! Вы отлично разбираетесь в аксиологии!";
             } else if (percentage >= 60) {
@@ -314,6 +284,10 @@
             } else {
                 return "Рекомендуется повторить материал по аксиологии.";
             }
+        }
+    </script>
+</body>
+</html>
         }
     </script>
 </body>
