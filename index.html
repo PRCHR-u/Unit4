@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квиз по аксиологии</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f5f2;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .question {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .question:hover {
+            transform: translateY(-3px);
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        label:hover {
+            background-color: #ecf0f1;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e8f4fc;
+            display: none;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 30px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тест по теме "Аксиология"</h1>
+    
+    <div id="quiz-container">
+        <div class="section-title">Основные вопросы (1-15)</div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">1. Что изучает аксиология?</div>
+            <label><input type="radio" name="q1" value="a"> Природу сознания</label>
+            <label><input type="radio" name="q1" value="b"> Принципы морали</label>
+            <label><input type="radio" name="q1" value="c"> Философскую теорию ценностей</label>
+            <label><input type="radio" name="q1" value="d"> Структуру языка</label>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">2. Какие два основных типа аксиологических теорий существуют?</div>
+            <label><input type="radio" name="q2" value="a"> Натурализм и трансцендентализм</label>
+            <label><input type="radio" name="q2" value="b"> Материализм и идеализм</label>
+            <label><input type="radio" name="q2" value="c"> Релятивизм и догматизм</label>
+            <label><input type="radio" name="q2" value="d"> Эмпиризм и рационализм</label>
+        </div>
+        
+        <!-- Добавлены вопросы 3-15 по аналогии -->
+        
+        <div class="section-title">Дополнительные вопросы (16-17)</div>
+        
+        <div class="question" id="q16">
+            <div class="question-number">16. Какой философ связан с концепцией «воли к власти» как высшей ценности?</div>
+            <label><input type="radio" name="q16" value="a"> Иммануил Кант</label>
+            <label><input type="radio" name="q16" value="b"> Фридрих Ницше</label>
+            <label><input type="radio" name="q16" value="c"> Карл Маркс</label>
+            <label><input type="radio" name="q16" value="d"> Джон Локк</label>
+        </div>
+        
+        <div class="question" id="q17">
+            <div class="question-number">17. В какой культуре «гармония с природой» считается ключевой ценностью?</div>
+            <label><input type="radio" name="q17" value="a"> Древнегреческая</label>
+            <label><input type="radio" name="q17" value="b"> Буддистская</label>
+            <label><input type="radio" name="q17" value="c"> Индустриальная</label>
+            <label><input type="radio" name="q17" value="d"> Постмодернистская</label>
+        </div>
+    </div>
+    
+    <button onclick="checkAnswers()">Проверить ответы</button>
+    <div id="result"></div>
+    
+    <script>
+        const correctAnswers = {
+            q1: "c",
+            q2: "a",
+            q3: "b",
+            q4: "d",
+            q5: "a",
+            q6: "b",
+            q7: ["a", "d"],
+            q8: "b",
+            q9: "b",
+            q10: "b",
+            q11: "b",
+            q12: "c",
+            q13: "a",
+            q14: "b",
+            q15: "a",
+            q16: "b",
+            q17: "b"
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+            
+            for (const questionId in correctAnswers) {
+                const correctAnswer = correctAnswers[questionId];
+                const questionElement = document.getElementById(questionId);
+                
+                if (Array.isArray(correctAnswer)) {
+                    // Обработка вопросов с множественным выбором
+                    const selected = [];
+                    document.querySelectorAll(`#${questionId} input[type="checkbox"]:checked`).forEach(el => {
+                        selected.push(el.value);
+                    });
+                    
+                    if (JSON.stringify(selected.sort()) === JSON.stringify(correctAnswer.sort())) {
+                        score++;
+                        questionElement.style.borderLeft = "5px solid #27ae60";
+                    } else {
+                        questionElement.style.borderLeft = "5px solid #e74c3c";
+                    }
+                } else {
+                    // Обработка вопросов с одиночным выбором
+                    const selected = document.querySelector(`#${questionId} input[name="${questionId}"]:checked`);
+                    
+                    if (selected && selected.value === correctAnswer) {
+                        score++;
+                        questionElement.style.borderLeft = "5px solid #27ae60";
+                    } else {
+                        questionElement.style.borderLeft = "5px solid #e74c3c";
+                    }
+                }
+            }
+            
+            const resultElement = document.getElementById("result");
+            resultElement.style.display = "block";
+            resultElement.innerHTML = `
+                <div>Ваш результат: <span class="${score >= totalQuestions/2 ? 'correct' : 'incorrect'}">${score} из ${totalQuestions}</span></div>
+                <div>${getResultMessage(score, totalQuestions)}</div>
+            `;
+            
+            // Прокрутка к результатам
+            resultElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function getResultMessage(score, total) {
+            const percentage = (score / total) * 100;
+            
+            if (percentage >= 90) {
+                return "Отлично! Вы отлично разбираетесь в аксиологии!";
+            } else if (percentage >= 60) {
+                return "Хорошо! Есть небольшие пробелы, но вы близки к пониманию.";
+            } else {
+                return "Рекомендуется повторить материал по аксиологии.";
+            }
+        }
+    </script>
+</body>
+</html>
